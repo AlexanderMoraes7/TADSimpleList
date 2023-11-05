@@ -2,6 +2,7 @@ public class No{
 
   private double valor;
   private No prox;
+  
 
   public No(double valor){
     this.valor = valor;
@@ -9,8 +10,8 @@ public class No{
   } 
 
   public No(){
-    this.ponto = 0;
-    this.ponto = null;
+    this.valor = 0;
+    this.prox = null;
   }
 
   public No(double valor, No prox){
@@ -18,11 +19,11 @@ public class No{
     this.prox = prox;
   } 
 
-  public void setValor(){
+  public void setValor(double valor){
     this.valor = valor;
   }
 
-  public void setProx(){
+  public void setProx(No prox){
     this.prox = prox;
   }
 
@@ -30,7 +31,7 @@ public class No{
     return this.valor;
   }
 
-  public double getProx(){
+  public No getProx(){
     return this.prox;
   }
 }
