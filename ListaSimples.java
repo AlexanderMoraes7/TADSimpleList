@@ -30,14 +30,14 @@ public class ListaSimples {
 
   public void insereElementoFim(double x){
     No novo = new No(x);
-    this.fim.setProx(novo);
+    this.fim.setProximo(novo);
     this.fim = novo;
     this.tamanho++;
   }
 
   public void insereElementoComeco(double x){
     No novo = new No(x);
-    novo.setProx(this.inicio);
+    novo.setProximo(this.inicio);
     this.inicio = novo;
     this.tamanho++;
   }
@@ -46,10 +46,10 @@ public class ListaSimples {
     No novo = new No(x);
     No aux = this.inicio;
     for (int i = 1; i < pos; i++) {
-      aux = aux.getProx();
+      aux = aux.getProximo();
     }
-    novo.setProx(aux.getProx());
-    aux.setProx(novo);
+    novo.setProximo(aux.getProximo());
+    aux.setProximo(novo);
     this.tamanho++;
   }
 
@@ -64,7 +64,8 @@ public class ListaSimples {
       }
       return true;
     } else {
-      return false;
+      inserePrimeiroElemento(x);
+      return true;
     }
   }
 
@@ -72,7 +73,33 @@ public class ListaSimples {
     No aux = this.inicio;
     do {
       System.out.println("lista[] = " + aux.getValor());
-      aux = aux.getProx();
+      aux = aux.getProximo();
     } while (aux != null);
   }
+
+  public void removeElementoInicio(){
+    No temp = this.inicio;
+    this.inicio.setProximo(temp.getProximo());
+    temp = null;
+    this.tamanho--;
+  }
+
+  public void removeElementoFinal(){
+    No temp = this.fim;
+    No ant = this.inicio;
+    do{
+      ant = ant.getProximo();
+    } while (ant.getProximo() != null);
+    ant.setProximo(null);
+    this.fim = ant;
+    this.tamanho--;
+  }
+
+  public void removeElementoMeio(int pos){
+    No ant = this.inicio;
+    for (int i = 1; i < pos; i++){
+      ant = ant.getProximo();
+    }
+  }
+
 }

@@ -23,7 +23,7 @@ public class No{
     this.valor = valor;
   }
 
-  public void setProx(No prox){
+  public void setProximo(No prox){
     this.prox = prox;
   }
 
@@ -31,7 +31,7 @@ public class No{
     return this.valor;
   }
 
-  public No getProx(){
+  public No getProximo(){
     return this.prox;
   }
 }
