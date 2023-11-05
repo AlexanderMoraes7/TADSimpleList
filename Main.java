@@ -1,7 +1,7 @@
 class Main {
   public static void main(String[] args) {
-    No no1 = new No();
-    no1.setValor(10);
-    System.out.println(no1.getValor());
+    No no1 = new No(15);
+    System.out.println("Valor " + no1.getValor());
+    System.out.println("Próximo é: " + no1.getProximo());
   }
 }

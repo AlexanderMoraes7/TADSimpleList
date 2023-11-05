@@ -2,6 +2,7 @@ public class ListaSimples {
   private No inicio;
   private No fim;
   private int tamanho;
+  private No temp;
 
   public ListaSimples() { // Construtor
     this.inicio = null;
@@ -78,14 +79,14 @@ public class ListaSimples {
   }
 
   public void removeElementoInicio() {
-    No temp = this.inicio;
+    this.temp = this.inicio;
     this.inicio.setProximo(temp.getProximo());
-    temp = null;
+    this.temp = null;
     this.tamanho--;
   }
 
   public void removeElementoFinal() {
-    No temp = this.fim;
+    this.temp = this.fim;
     No ant = this.inicio;
     do {
       ant = ant.getProximo();
@@ -100,6 +101,16 @@ public class ListaSimples {
     for (int i = 1; i < pos; i++) {
       ant = ant.getProximo();
     }
+    this.temp = ant.getProximo();
+    temp = null;
+    this.tamanho--;
   }
 
+  public void removeUltimoElemento() {
+    this.temp = this.inicio;
+    this.inicio = null;
+    this.fim = null;
+    temp = null;
+    this.tamanho = 0;
+  }
 }
