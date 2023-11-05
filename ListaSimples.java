@@ -3,7 +3,7 @@ public class ListaSimples {
   private No fim;
   private int tamanho;
 
-  public ListaSimples(){ // Construtor
+  public ListaSimples() { // Construtor
     this.inicio = null;
     this.fim = null;
     this.tamanho = 0;
@@ -13,8 +13,8 @@ public class ListaSimples {
     return this.tamanho;
   }
 
-  public boolean ehVazia(){
-    if ((this.inicio == null) && (this.fim == null)){
+  public boolean ehVazia() {
+    if ((this.inicio == null) && (this.fim == null)) {
       return true;
     } else {
       return false;
@@ -28,14 +28,14 @@ public class ListaSimples {
     this.tamanho++;
   }
 
-  public void insereElementoFim(double x){
+  public void insereElementoFim(double x) {
     No novo = new No(x);
     this.fim.setProximo(novo);
     this.fim = novo;
     this.tamanho++;
   }
 
-  public void insereElementoComeco(double x){
+  public void insereElementoComeco(double x) {
     No novo = new No(x);
     novo.setProximo(this.inicio);
     this.inicio = novo;
@@ -77,17 +77,17 @@ public class ListaSimples {
     } while (aux != null);
   }
 
-  public void removeElementoInicio(){
+  public void removeElementoInicio() {
     No temp = this.inicio;
     this.inicio.setProximo(temp.getProximo());
     temp = null;
     this.tamanho--;
   }
 
-  public void removeElementoFinal(){
+  public void removeElementoFinal() {
     No temp = this.fim;
     No ant = this.inicio;
-    do{
+    do {
       ant = ant.getProximo();
     } while (ant.getProximo() != null);
     ant.setProximo(null);
@@ -95,9 +95,9 @@ public class ListaSimples {
     this.tamanho--;
   }
 
-  public void removeElementoMeio(int pos){
+  public void removeElementoMeio(int pos) {
     No ant = this.inicio;
-    for (int i = 1; i < pos; i++){
+    for (int i = 1; i < pos; i++) {
       ant = ant.getProximo();
     }
   }
